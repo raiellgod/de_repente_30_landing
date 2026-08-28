@@ -1,0 +1,657 @@
+/* =========================================================
+   DE REPENTE 30 — LANDING PAGE
+   Arquivo: style.css
+   ========================================================= */
+
+:root {
+  --pink-bg: #f7c9d4;
+  --pink-light: #ffe8ee;
+  --pink-soft: #f5b8c8;
+  --pink-main: #df6f91;
+  --pink-dark: #a74062;
+  --peach: #ffd7c4;
+  --cream: #fff8f4;
+  --white: #ffffff;
+  --wine: #7f2443;
+  --text: #57303d;
+  --shadow: 0 18px 50px rgba(127, 36, 67, 0.16);
+  --soft-shadow: 0 10px 30px rgba(127, 36, 67, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.55), transparent 25%),
+    radial-gradient(circle at 85% 20%, rgba(255, 231, 237, 0.75), transparent 28%),
+    linear-gradient(180deg, #f8d2db 0%, var(--pink-bg) 45%, #f2b6c5 100%);
+  color: var(--text);
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  width: 100%;
+  padding: clamp(70px, 9vw, 130px) 24px;
+  position: relative;
+}
+
+.section-inner {
+  width: min(1160px, 100%);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--pink-dark);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: var(--white);
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-weight: 500;
+  line-height: 0.8;
+  letter-spacing: -0.055em;
+  text-shadow: 0 5px 20px rgba(122, 41, 66, 0.16);
+}
+
+h1 span {
+  display: block;
+  margin-top: 22px;
+  color: var(--pink-dark);
+  font-size: 0.52em;
+  font-style: italic;
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  color: var(--wine);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+h3 {
+  margin-bottom: 12px;
+  color: var(--wine);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+/* =========================================================
+   SEÇÃO 1
+   ========================================================= */
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(223, 111, 145, 0.1), transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.65), transparent 24%);
+}
+
+.hero-section::before {
+  content: "30";
+  position: absolute;
+  right: -3vw;
+  bottom: -9vw;
+  color: rgba(255, 255, 255, 0.22);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(13rem, 32vw, 34rem);
+  font-weight: 600;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+  gap: clamp(42px, 7vw, 90px);
+  align-items: center;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.message-card {
+  max-width: 700px;
+  padding: clamp(28px, 4vw, 48px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 28px;
+  background: rgba(255, 248, 244, 0.74);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.message-card h2 {
+  margin-bottom: 18px;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+}
+
+/* =========================================================
+   PLACEHOLDERS DE FOTO
+   ========================================================= */
+
+.photo-polaroid {
+  padding: 14px 14px 48px;
+  background: #fffdfc;
+  border-radius: 6px;
+  box-shadow: 0 25px 60px rgba(99, 39, 58, 0.22);
+  position: relative;
+}
+
+.photo-polaroid::after {
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  transform: translateX(-50%);
+  width: 100%;
+  color: var(--pink-dark);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.photo-polaroid--large {
+  transform: rotate(2.2deg);
+}
+
+.photo-polaroid--tilt-left {
+  transform: rotate(-6deg);
+}
+
+.photo-polaroid--tilt-right {
+  transform: rotate(6deg);
+}
+
+.photo-polaroid--center {
+  transform: translateY(24px) rotate(-1deg);
+}
+
+.photo-placeholder {
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  border: 2px dashed rgba(167, 64, 98, 0.35);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,227,235,0.9)),
+    repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent 10px,
+      rgba(223, 111, 145, 0.06) 10px,
+      rgba(223, 111, 145, 0.06) 20px
+    );
+  color: var(--pink-dark);
+  text-align: center;
+}
+
+.photo-placeholder span {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2rem;
+}
+
+.photo-placeholder small {
+  margin-top: 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.photo-placeholder--wide {
+  min-height: 300px;
+  border-radius: 24px;
+}
+
+.photo-placeholder--portrait {
+  min-height: 360px;
+}
+
+/* =========================================================
+   SEÇÃO 2
+   ========================================================= */
+
+.memories-section {
+  background: rgba(255, 246, 243, 0.56);
+}
+
+.section-title {
+  display: flex;
+  gap: 26px;
+  align-items: flex-end;
+  margin-bottom: 60px;
+}
+
+.section-title .number {
+  color: var(--pink-main);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(6rem, 14vw, 13rem);
+  font-weight: 500;
+  line-height: 0.68;
+  letter-spacing: -0.08em;
+}
+
+.section-title h2 {
+  margin-bottom: 0;
+}
+
+.memory-grid {
+  display: grid;
+  gap: 38px;
+}
+
+.memory-card {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(26px, 5vw, 58px);
+  align-items: center;
+  padding: clamp(20px, 3vw, 34px);
+  border: 1px solid rgba(255,255,255,0.75);
+  border-radius: 34px;
+  background: rgba(255,255,255,0.46);
+  box-shadow: var(--soft-shadow);
+}
+
+.memory-card--reverse .photo-placeholder {
+  order: 2;
+}
+
+.memory-card--reverse .memory-text {
+  order: 1;
+}
+
+.memory-text {
+  padding: 14px;
+}
+
+/* =========================================================
+   SEÇÃO 3
+   ========================================================= */
+
+.love-section {
+  overflow: hidden;
+}
+
+.love-section::before {
+  content: "♥";
+  position: absolute;
+  top: 8%;
+  right: 3%;
+  color: rgba(255, 255, 255, 0.32);
+  font-size: clamp(8rem, 18vw, 17rem);
+  transform: rotate(12deg);
+  pointer-events: none;
+}
+
+.love-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(50px, 8vw, 100px);
+  align-items: center;
+}
+
+.love-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.love-gallery .photo-polaroid:nth-child(3) {
+  grid-column: 1 / -1;
+  width: 58%;
+  margin: -26px auto 0;
+}
+
+.love-letter {
+  position: relative;
+  padding: clamp(32px, 5vw, 60px);
+  border-radius: 28px 28px 28px 8px;
+  background: var(--cream);
+  box-shadow: var(--shadow);
+}
+
+.love-letter::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(167, 64, 98, 0.25);
+  border-radius: 50%;
+}
+
+.signature {
+  margin: 38px 0 0;
+  color: var(--pink-dark);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+.signature span {
+  font-size: 1.5rem;
+}
+
+/* =========================================================
+   FINAL / CASA DE BONECAS
+   ========================================================= */
+
+.finale {
+  position: relative;
+  overflow: hidden;
+  padding: 110px 24px 90px;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255,255,255,0.8), transparent 30%),
+    linear-gradient(180deg, rgba(255, 232, 238, 0.25), rgba(255, 247, 242, 0.92));
+}
+
+.finale::before,
+.finale::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.finale::before {
+  left: -140px;
+  bottom: -170px;
+  background: rgba(255, 188, 208, 0.55);
+}
+
+.finale::after {
+  right: -160px;
+  bottom: -130px;
+  background: rgba(255, 221, 198, 0.7);
+}
+
+.finale-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.finale-text {
+  max-width: 760px;
+  margin: 0 auto 60px;
+}
+
+.dollhouse-placeholder {
+  width: min(480px, 90%);
+  margin: 0 auto;
+  padding: 35px 30px 28px;
+  background: transparent;
+}
+
+.dollhouse-placeholder > p {
+  margin: 22px 0 0;
+  color: var(--pink-dark);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.house {
+  width: 220px;
+  margin: 0 auto;
+}
+
+.roof {
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-bottom: 95px solid #d96c8b;
+}
+
+.house-body {
+  min-height: 170px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 12px;
+  padding: 38px 20px 0;
+  background: #f5b6c6;
+  border: 10px solid #fff8f4;
+  border-top: 0;
+}
+
+.window {
+  width: 42px;
+  height: 60px;
+  margin-bottom: 45px;
+  border: 7px solid #fff8f4;
+  background: #ffd8c4;
+}
+
+.door {
+  width: 55px;
+  height: 92px;
+  background: #a74062;
+  border: 7px solid #fff8f4;
+  border-bottom: 0;
+}
+
+.final-sparkle {
+  margin-top: 36px;
+  color: var(--white);
+  font-size: 2rem;
+  text-shadow:
+    0 0 8px #ffffff,
+    0 0 18px #f6a7bd,
+    0 0 35px #f6a7bd;
+}
+
+/* =========================================================
+   PÓ DO DESEJO / BRILHOS CAINDO
+   Sem JavaScript.
+   ========================================================= */
+
+.wish-dust {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.wish-dust span {
+  position: absolute;
+  top: -10vh;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.95);
+  box-shadow:
+    0 0 8px rgba(255,255,255,0.95),
+    0 0 16px rgba(255,216,228,0.9);
+  animation: falling-dust linear infinite;
+}
+
+.wish-dust span:nth-child(1)  { left: 4%;  animation-duration: 8s;  animation-delay: -1s; }
+.wish-dust span:nth-child(2)  { left: 9%;  animation-duration: 12s; animation-delay: -7s; width: 4px; height: 4px; }
+.wish-dust span:nth-child(3)  { left: 16%; animation-duration: 10s; animation-delay: -3s; }
+.wish-dust span:nth-child(4)  { left: 23%; animation-duration: 13s; animation-delay: -9s; width: 5px; height: 5px; }
+.wish-dust span:nth-child(5)  { left: 29%; animation-duration: 9s;  animation-delay: -4s; }
+.wish-dust span:nth-child(6)  { left: 34%; animation-duration: 14s; animation-delay: -11s; width: 4px; height: 4px; }
+.wish-dust span:nth-child(7)  { left: 41%; animation-duration: 11s; animation-delay: -5s; }
+.wish-dust span:nth-child(8)  { left: 47%; animation-duration: 15s; animation-delay: -2s; width: 5px; height: 5px; }
+.wish-dust span:nth-child(9)  { left: 53%; animation-duration: 9s;  animation-delay: -8s; }
+.wish-dust span:nth-child(10) { left: 59%; animation-duration: 12s; animation-delay: -6s; width: 4px; height: 4px; }
+.wish-dust span:nth-child(11) { left: 64%; animation-duration: 10s; animation-delay: -1s; }
+.wish-dust span:nth-child(12) { left: 70%; animation-duration: 14s; animation-delay: -10s; }
+.wish-dust span:nth-child(13) { left: 75%; animation-duration: 8s;  animation-delay: -4s; width: 5px; height: 5px; }
+.wish-dust span:nth-child(14) { left: 81%; animation-duration: 13s; animation-delay: -7s; }
+.wish-dust span:nth-child(15) { left: 87%; animation-duration: 11s; animation-delay: -3s; width: 4px; height: 4px; }
+.wish-dust span:nth-child(16) { left: 92%; animation-duration: 15s; animation-delay: -12s; }
+.wish-dust span:nth-child(17) { left: 97%; animation-duration: 9s;  animation-delay: -5s; width: 5px; height: 5px; }
+.wish-dust span:nth-child(18) { left: 12%; animation-duration: 16s; animation-delay: -13s; }
+.wish-dust span:nth-child(19) { left: 45%; animation-duration: 12s; animation-delay: -9s; width: 4px; height: 4px; }
+.wish-dust span:nth-child(20) { left: 78%; animation-duration: 10s; animation-delay: -6s; }
+
+@keyframes falling-dust {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  50% {
+    transform: translate3d(35px, 55vh, 0) rotate(180deg) scale(1.2);
+  }
+
+  100% {
+    transform: translate3d(-20px, 115vh, 0) rotate(360deg) scale(0.7);
+    opacity: 0;
+  }
+}
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .hero-grid,
+  .love-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-grid {
+    gap: 55px;
+  }
+
+  .photo-polaroid--large {
+    width: min(560px, 88%);
+    margin: 0 auto;
+  }
+
+  .memory-card,
+  .memory-card--reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .memory-card--reverse .photo-placeholder,
+  .memory-card--reverse .memory-text {
+    order: initial;
+  }
+
+  .love-gallery {
+    width: min(650px, 100%);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .section {
+    padding-inline: 16px;
+  }
+
+  .section-title {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .section-title .number {
+    font-size: 5rem;
+  }
+
+  .photo-placeholder {
+    min-height: 330px;
+  }
+
+  .photo-placeholder--wide {
+    min-height: 230px;
+  }
+
+  .photo-placeholder--portrait {
+    min-height: 260px;
+  }
+
+  .love-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .love-gallery .photo-polaroid:nth-child(3) {
+    grid-column: auto;
+    width: 100%;
+    margin: 0;
+  }
+
+  .photo-polaroid--tilt-left,
+  .photo-polaroid--tilt-right,
+  .photo-polaroid--center {
+    transform: rotate(0deg);
+  }
+
+  .finale {
+    padding-inline: 16px;
+  }
+}
+
+/* Respeita usuários que preferem menos animação */
+@media (prefers-reduced-motion: reduce) {
+  .wish-dust {
+    display: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
